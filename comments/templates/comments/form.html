@@ -1,0 +1,8 @@
+{% extends 'comments/base.html' %} {% block content %}
+<h1>Añadir comentario</h1>
+<form method="post">
+  {% csrf_token %} {{ form.as_p}}
+  <button type="submit">Crear comentario</button><br />
+</form>
+<a href=" {%  url 'lista_comentarios' %} "> <button>Listado</button> </a>
+{% endblock %}

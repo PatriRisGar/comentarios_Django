@@ -1,0 +1,10 @@
+{% extends 'comments/base.html' %} {% block content %}
+<h2>Editar comentario</h2>
+
+<form action="" method="post">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit">Editar comentario</button><br />
+</form>
+
+<a href=" {% url 'lista_comentarios' %} "> <button>Listado</button> </a>
+{% endblock %}

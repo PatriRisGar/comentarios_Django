@@ -1,0 +1,14 @@
+{% extends 'comments/base.html' %} {% block content %}
+<h1>Listado de comentarios</h1>
+<a href=" {% url 'formulario' %} "> <button>Nuevo</button> </a>
+
+{% for comment in object_list %}
+<article>
+  <a href=" {% url 'detalleComentario' pk=comment.pk %}"
+    ><p>{{ comment.comentario }}</p></a
+  >
+  <footer>
+    <cite>- {{ comment.nombre }}</cite>
+  </footer>
+</article>
+{% endfor %} {% endblock %}

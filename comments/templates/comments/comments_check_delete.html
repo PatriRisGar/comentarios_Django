@@ -1,0 +1,8 @@
+{% extends 'comments/base.html' %} {% block content %}
+<form method="post">
+  {% csrf_token %}
+  <p>¿Desea borrar? "{{ object.comentario }}"?</p>
+  {{ form }}
+  <input type="submit" value="Confirmar" />
+</form>
+{% endblock %}

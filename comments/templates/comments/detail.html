@@ -1,0 +1,16 @@
+{% extends 'comments/base.html' %} {% block content %}
+<h2>Detalle comentario</h2>
+<article>
+  <h2>{{ object.nombre }}</h2>
+  <p>{{ object.email }}</p>
+  <p>{{ object.comentario }}</p>
+</article>
+
+<a href="{% url 'editarComentario' pk=object.pk %}">
+  <button>Editar</button>
+</a>
+<a href="{% url 'borrarComentario' pk=object.pk %}">
+  <button>Borrar</button>
+</a>
+<a href=" {% url 'lista_comentarios' %} "> <button>Listado</button> </a>
+{% endblock %}
